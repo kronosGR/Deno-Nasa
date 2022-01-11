@@ -19,6 +19,8 @@ app.use(async (ctx, next) => {
 });
 
 app.use(api.routes());
+// adds 405 on response with for methods haven't implemented
+app.use(api.allowedMethods())
 
 app.use(async (ctx) => {
   const filePath = ctx.request.url.pathname;
