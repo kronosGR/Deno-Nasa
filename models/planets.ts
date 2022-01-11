@@ -26,7 +26,7 @@ async function loadPlanetsData() {
 
     return planet["koi_disposition"] === "CONFIRMED" &&
       planetaryRadius > 0.5 && planetaryRadius < 1.5 &&
-      stellarRadius > 0.98 && stellarRadius < 1.02 &&
+      stellarRadius > 0.99 && stellarRadius < 1.01 &&
       stellarMass > 0.78 && stellarMass < 1.04;
   });
 
