@@ -16,18 +16,20 @@ app.use(async (ctx, next) => {
   ctx.response.headers.set('X-Response-Time', `${delta}ms`);
 });
 
-app.use(async (ctx)=>{
+app.use(async (ctx) => {
   const filePath = ctx.request.url.pathname;
   const fileWhiteList = [
-    "index.html",
-    "javascripts/script.js",
-    "stylesheets/style.css",
-    "images/favicon.png"
-  ]
-  await send(ctx, filePath, {
-    root: `${Deno.cwd()}/public`
-  })
-})
+    'index.html',
+    'javascripts/script.js',
+    'stylesheets/style.css',
+    'images/favicon.png',
+  ];
+  if (fileWhiteList.includes(filePath)) {
+    await send(ctx, filePath, {
+      root: `${Deno.cwd()}/public`,
+    });
+  }
+});
 
 app.use(async (ctx) => {
   ctx.response.body = `
