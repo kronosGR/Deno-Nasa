@@ -1,6 +1,4 @@
-import { join } from 'https://deno.land/std/path/mod.ts';
-import { BufReader } from 'https://deno.land/std/io/mod.ts';
-import { parse } from 'https://deno.land/std/encoding/csv.ts';
+import { join, BufReader, parse } from '../debs.ts';
 
 import * as _ from 'https://raw.githubusercontent.com/lodash/lodash/es/lodash.js';
 import * as log from 'https://deno.land/std/log/mod.ts';
